@@ -56,18 +56,3 @@ int main(int argc, char* argv[]) {
                          "int_as_array_multiply.tsv", &Multiply,
                          DefaultComparator{}, param_names);
 }
-
-//int main() {
-//    vector<int> num1(3);
-//    num1[0] = 1, num1[1] = 2, num1[2] = 3;
-//    vector<int> num2(3);
-//    num2[0] = 9, num2[1] = 8, num2[2] = 7;
-//
-//
-//    vector<int> result = Multiply(num1, num2);
-//    std::cout << "result: ";
-//    for(int i = 0; i < result.size(); i++) {
-//        std::cout << result[i];
-//    }
-//    std::cout << std::endl;
-//}
