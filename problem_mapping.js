@@ -214,7 +214,7 @@ problem_mapping = {
         },
         "5.03 Multiply two arbitrary-precision integers": {
             "C++: int_as_array_multiply.cc": {
-                "passed": 0,
+                "passed": 1000,
                 "total": 1000
             },
             "Java: IntAsArrayMultiply.java": {
@@ -228,7 +228,7 @@ problem_mapping = {
         },
         "5.04 Advancing through an array": {
             "C++: advance_by_offsets.cc": {
-                "passed": 0,
+                "passed": 2004,
                 "total": 2004
             },
             "Java: AdvanceByOffsets.java": {
@@ -242,7 +242,7 @@ problem_mapping = {
         },
         "5.05 Delete duplicates from a sorted array": {
             "C++: sorted_array_remove_dups.cc": {
-                "passed": 0,
+                "passed": 2003,
                 "total": 2003
             },
             "Java: SortedArrayRemoveDups.java": {
