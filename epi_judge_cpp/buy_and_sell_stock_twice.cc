@@ -27,7 +27,7 @@ double BuyAndSellStockTwice(const vector<double>& prices) {
    * Working backward, the most profit that can be made with a single buy and sell on or after Day i
    * */
   double maxPriceSoFar = numeric_limits<double>::min();
-  for(int i = prices.size() - 1; i >= 0; i--) {
+  for(int i = prices.size() - 1; i > 0; i--) {
       maxPriceSoFar = max(maxPriceSoFar, prices[i]);
       maxTotalProfit = max(maxTotalProfit, maxPriceSoFar - prices[i] + firstBuySellProfits[i - 1]);
   }
