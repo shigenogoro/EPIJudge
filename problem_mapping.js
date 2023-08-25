@@ -284,7 +284,7 @@ problem_mapping = {
         },
         "5.08 Computing an alternation": {
             "C++: alternating_array.cc": {
-                "passed": 0,
+                "passed": 203,
                 "total": 203
             },
             "Java: AlternatingArray.java": {
