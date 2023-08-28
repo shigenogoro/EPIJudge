@@ -6,29 +6,14 @@
 #include "test_framework/test_failure.h"
 #include "test_framework/timed_executor.h"
 using std::vector;
+using std::swap;
 void Rearrange(vector<int>* A_ptr) {
   // TODO - you fill in here.
   vector<int> &A = *A_ptr;
-  sort(A.begin(), A.end());
-
-  int mid = A.size() / 2;
-  if(A.size() % 2 != 0) {
-      mid = mid + 1;
-  }
-  vector<int> lowerHalf = vector<int>(A.begin(), A.begin() + mid);
-  vector<int> upperHalf = vector<int>(A.begin() + mid, A.end());
-  int i = 0, j = 0;
-  while(i < lowerHalf.size()) {
-      A[j] = lowerHalf[i];
-      i++;
-      j += 2;
-  }
-
-  i = 0, j = 1;
-  while(i < upperHalf.size()) {
-      A[j] = upperHalf[i];
-      i++;
-      j += 2;
+  for(int i = 1; i < A.size(); i++) {
+      if((i % 2 == 1 && A[i - 1] > A[i]) || (i % 2 == 0 && A[i - 1] < A[i])) {
+          swap(A[i - 1], A[i]);
+      }
   }
   return;
 }
