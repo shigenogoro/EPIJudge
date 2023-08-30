@@ -186,7 +186,7 @@ problem_mapping = {
         },
         "5.01 The Dutch national flag problem": {
             "C++: dutch_national_flag.cc": {
-                "passed": 0,
+                "passed": 204,
                 "total": 204
             },
             "Java: DutchNationalFlag.java": {
@@ -200,7 +200,7 @@ problem_mapping = {
         },
         "5.02 Increment an arbitrary-precision integer": {
             "C++: int_as_array_increment.cc": {
-                "passed": 0,
+                "passed": 505,
                 "total": 505
             },
             "Java: IntAsArrayIncrement.java": {
@@ -326,7 +326,7 @@ problem_mapping = {
         },
         "5.11 Compute the next permutation": {
             "C++: next_permutation.cc": {
-                "passed": 0,
+                "passed": 2001,
                 "total": 2001
             },
             "Java: NextPermutation.java": {
@@ -340,7 +340,7 @@ problem_mapping = {
         },
         "5.12 Sample offline data": {
             "C++: offline_sampling.cc": {
-                "passed": 0,
+                "passed": 8,
                 "total": 8
             },
             "Java: OfflineSampling.java": {

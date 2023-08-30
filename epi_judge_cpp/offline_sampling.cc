@@ -2,14 +2,29 @@
 #include <functional>
 #include <iterator>
 #include <vector>
+#include <random>
 
 #include "test_framework/generic_test.h"
 #include "test_framework/random_sequence_checker.h"
 #include "test_framework/timed_executor.h"
 using std::bind;
 using std::vector;
+using std::swap;
 void RandomSampling(int k, vector<int>* A_ptr) {
   // TODO - you fill in here.
+  vector<int> &A = *A_ptr;
+
+  // Random number generator
+  std::default_random_engine seed((std::random_device())());
+
+  for(int i = 0; i < k; i++) {
+      // generate a random index in [i, A.size() - 1]
+      int randomIndex = std::uniform_int_distribution<int> {
+          i, static_cast<int>(A.size()) - 1
+      }(seed);
+      swap(A[i], A[randomIndex]);
+  }
+
   return;
 }
 bool RandomSamplingRunner(TimedExecutor& executor, int k, vector<int> A) {
