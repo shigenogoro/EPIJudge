@@ -1,14 +1,40 @@
 #include <functional>
 #include <vector>
+#include <random>
 
 #include "test_framework/generic_test.h"
 #include "test_framework/random_sequence_checker.h"
 #include "test_framework/timed_executor.h"
 using std::bind;
 using std::vector;
+using std::swap;
+
+void RandomSampling(int k, vector<int> *A_ptr) {
+    vector<int> &A = *A_ptr;
+    // Random Number Generator
+    std::default_random_engine seed((std::random_device())());
+
+    // Generator random index in [k, A.size() - 1]
+    for(int i = 0; i < k; i++) {
+        int randomIndex = std::uniform_int_distribution<int> {
+                i, static_cast<int>(A.size() - 1)
+        }(seed);
+
+        swap(A[i], A[randomIndex]);
+    }
+    return;
+}
+
 vector<int> ComputeRandomPermutation(int n) {
   // TODO - you fill in here.
-  return {};
+  vector<int> permutation(n);
+  // Initialize permutation vector to 0, 1, 2, ..., n - 1
+  for(int i = 0; i < n; i++) {
+      permutation[i] = i;
+  }
+  RandomSampling(n, &permutation);
+
+  return permutation;
 }
 int Factorial(int n) { return n <= 1 ? 1 : n * Factorial(n - 1); }
 
